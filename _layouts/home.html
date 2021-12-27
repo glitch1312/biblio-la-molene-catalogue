@@ -679,31 +679,31 @@
         <table id="example" class="display" style="width: 100%">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Sku</th>
-              <th>Price</th>
-              <th>Description</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
             </tr>
           </thead>
 
           <tbody>
             <!--For loop that iterates over markdown frontmatter in _skus folder-->
-            {% for sku in site.skus %}
+            {% for book in site.books %}
             <tr>
-              <td>{{ sku.Name }}</td>
-              <td>{{ sku.Sku }}</td>
-              <td>{{ sku.Price }}</td>
-              <td>{{ sku.content | markdownify }}</td>
+              <td>{{ book.Nom }}</td>
+              <td>{{ book.Prénom }}</td>
+              <td>{{ book.Titre }}</td>
+              <td>{{ book.Catégorie }}</td>
             </tr>
             {% endfor %}
           </tbody>
 
           <tfoot>
             <tr>
-              <th>Name</th>
-              <th>Sku</th>
-              <th>Price</th>
-              <th>Description</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
             </tr>
           </tfoot>
         </table>
