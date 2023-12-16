@@ -44,12 +44,19 @@ print(dataframe.head())
 dataframe = dataframe.drop(columns = [column_list[3],column_list[4],column_list[5],column_list[6],column_list[7]])
 nan_value = float("NaN")
 dataframe.replace( nan_value, "", inplace=True)
+
 # lower case
 dataframe['Nom'] = dataframe['Nom'].apply(lambda x: x.lower())
 dataframe['Nom'] = dataframe['Nom'].apply(lambda x: x.title())
 
 dataframe['Prenom'] = dataframe['Prenom'].apply(lambda x: x.lower())
 dataframe['Prenom'] = dataframe['Prenom'].apply(lambda x: x.title())
+
+# #escape special character
+# dataframe['Prenom'] = dataframe['Prenom'].apply(lambda x: x.replace('\'', '\\\''))
+# dataframe['Nom'] = dataframe['Nom'].apply(lambda x: x.replace('\'', '\\\''))
+# dataframe['Titre'] = dataframe['Titre'].apply(lambda x: x.replace('\'', ' "\\\'" '))
+# dataframe['Categorie'] = dataframe['Categorie'].apply(lambda x: x.replace('\'', '\\\''))
 
 # writing
 print('Writing markdown files')
@@ -67,10 +74,10 @@ for i in range(n) :
 
     # front matter markdown with
     f.write('---\n')
-    f.write('Nom:  \''+df['Nom']+'\'\n')
-    f.write('Prenom: \''+ df['Prenom']+'\'\n')
-    f.write('Titre: \''+ df['Titre']+'\'\n')
-    f.write('Categorie: \''+df['Categorie']+'\'\n')
+    f.write('Nom:  \"'+df['Nom']+'\"\n')
+    f.write('Prenom: \"'+ df['Prenom']+'\"\n')
+    f.write('Titre: \"'+ df['Titre']+'\"\n')
+    f.write('Categorie: \"'+df['Categorie']+'\"\n')
     f.write('---')
 
     f.close()
