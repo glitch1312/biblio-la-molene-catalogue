@@ -15,7 +15,7 @@ import pandas as pd
 # initialization
 PATH = '/home/minou/Documents/biblio-la-molene-catalogue/'
 GENERATED_DATA = PATH+'_books/'
-CATALOG = PATH+'catalogue_molene.csv'
+CATALOG = PATH+'data/catalogue_molene.csv'
 print('Initialization done')
 # load
 raw_data = pd.read_csv(CATALOG, encoding = 'utf8')

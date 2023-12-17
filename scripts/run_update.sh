@@ -1,11 +1,12 @@
 #!/usr/bin/expect
-#{ echo "git add _books/*";}
-#{ echo "git commit -m \"Updating the catalogue\"";}
+#read file with token
+set f [open ./token-push.txt r]
+set token [read -nonewline $f]
+close $f
+
 spawn git push
 expect "Username for 'https://github.com':"
 send -- "glitch1312\r"
 expect "Password for 'https://glitch1312@github.com':"
-send -- "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\r"
+send -- "$token\r"
 expect eof
-#token="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"
-#{ echo "$token" ; echo "glitch1312" ;} | git push https://github.com/glitch1312/biblio-la-molene-catalogue
