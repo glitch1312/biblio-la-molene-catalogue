@@ -10,10 +10,11 @@ Description: Créer les objects d'une collection (books) en format  .md avec le 
 # import
 import os
 import pandas as pd
+import sys
 
 
 # initialization
-PATH = '/home/minou/Documents/biblio-la-molene-catalogue/'
+PATH = sys.argv[1]
 GENERATED_DATA = PATH+'_books/'
 CATALOG = PATH+'data/catalogue_molene.csv'
 print('Initialization done')
