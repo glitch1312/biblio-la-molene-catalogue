@@ -8,10 +8,11 @@ set f [open ./path.txt r]
 set path [read -nonewline $f]
 close $f
 
-spawn python3 update_books.py $path 
+spawn python update_books.py $path 
+expect eof;
 spawn git add -A run_update.expect
 spawn git add -A ../_books/*
-spawn git commit -m 'catalogue update'
+spawn git commit -m "catalogue update"
 spawn git status
 spawn git push
 expect "Username for 'https://github.com':"
