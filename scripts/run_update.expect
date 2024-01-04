@@ -11,9 +11,13 @@ close $f
 spawn python update_books.py $path 
 expect eof;
 spawn git add -A run_update.expect
+expect eof;
 spawn git add -A ../_books/*
+expect eof;
 spawn git commit -m "catalogue update"
+expect eof;
 spawn git status
+expect eof;
 spawn git push
 expect "Username for 'https://github.com':"
 send -- "glitch1312\r"
