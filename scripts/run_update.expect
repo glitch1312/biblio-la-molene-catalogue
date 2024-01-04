@@ -14,7 +14,7 @@ spawn git add -A run_update.expect
 expect eof;
 spawn git add -A ../_books/*
 expect eof;
-spawn git commit -m "catalogue update"
+spawn git commit -m "Mise a jour depuis local"
 expect eof;
 spawn git status
 expect eof;
@@ -24,4 +24,3 @@ send -- "glitch1312\r"
 expect "Password for 'https://glitch1312@github.com':"
 send -- "$token\r"
 expect eof
-spawn echo "Mise à jour effectuée"
