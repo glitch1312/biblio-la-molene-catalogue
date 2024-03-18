@@ -1,3 +1,5 @@
+En cours de developement
+Bug: la mise a jour sur le git avec le script expect fonctionne. Verifier quelles fichiers a commit, faire le launcher .desktop, ajouter une icone.et completer la docu
 # Catalogue en ligne de La Bibliothèque de La Molène
 #  Description 
 Ce repositoire contient les fichiers et le code nécessaire à la mise en ligne et à la mise à jour du catalogue en ligne de la Bibliothèque de La Molène.
