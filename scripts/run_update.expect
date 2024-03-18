@@ -1,22 +1,22 @@
 #!/usr/bin/expect
 #read file with token
-set f [open ./token-push.txt r]
+set f [open /home/pantoufle/Bureau/Programmes/biblio-la-molene-catalogue/scripts/token-push.txt r]
 set token [read -nonewline $f]
 close $f
 
-set f [open ./path.txt r]
+set f [open /home/pantoufle/Bureau/Programmes/biblio-la-molene-catalogue/scripts/path.txt r]
 set path [read -nonewline $f]
 close $f
 
+cd $path/scripts/
+pwd
 spawn python update_books.py $path 
 expect eof;
-spawn git add -A run_update.expect
+spawn git add -A ../data/catalogue_molene.csv 
 expect eof;
 spawn git add -A ../_books/*
 expect eof;
 spawn git commit -m "Mise a jour depuis local"
-expect eof;
-spawn git status
 expect eof;
 spawn git push
 expect "Username for 'https://github.com':"
@@ -24,3 +24,6 @@ send -- "glitch1312\r"
 expect "Password for 'https://glitch1312@github.com':"
 send -- "$token\r"
 expect eof
+spawn echo "\n-----------------------------------\nMISE A JOUR EFFECTUEE\n-------------------------------"
+
+
