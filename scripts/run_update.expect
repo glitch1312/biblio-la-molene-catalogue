@@ -24,6 +24,6 @@ send -- "glitch1312\r"
 expect "Password for 'https://glitch1312@github.com':"
 send -- "$token\r"
 expect eof
-spawn echo "\n-----------------------------------\nMISE A JOUR EFFECTUEE\n-------------------------------"
+spawn echo "\n-----------------------------------\n-----------------------------------\n-----------------------------------\n-----------------------------------\n-----------------------------------\nLA MISE A JOUR AUTOMATIQUE EFFECTUEE\nDANS QUELQUES MINUTES TU POURRAS ALLER SUR\nLE SITE DU CATALOGUE ET VÉRIFIER SI LES MODIFICATIONS ONT EU LIEU\n-------------------------------"
 
 

@@ -31,7 +31,7 @@ column_list = raw_data.columns
 dataframe = raw_data.rename(columns={
     column_list[0]: 'Titre',
     column_list[1]: 'Prenom',
-    column_list[2]: u'Catégorie',
+    column_list[2]: 'Categorie',
     column_list[3]: u'Nouvelles catégories',
     column_list[4]: 'Langues',
     column_list[5]: 'ID',
@@ -50,7 +50,6 @@ dataframe.replace( nan_value, "", inplace=True)
 
 # lower case
 dataframe['Nom'] = dataframe['Nom'].apply(lambda x: x.title())
-
 dataframe['Prenom'] = dataframe['Prenom'].apply(lambda x: x.lower())
 dataframe['Prenom'] = dataframe['Prenom'].apply(lambda x: x.title())
 
@@ -79,7 +78,7 @@ for i in range(n) :
     f.write(u'Nom:  \"'+df['Nom']+'\"\n')
     f.write(u'Prenom: \"'+ df['Prenom']+'\"\n')
     f.write(u'Titre: \"'+ df['Titre']+'\"\n')
-    f.write(u'Catégorie: \"'+df[u'Catégorie']+'\"\n')
+    f.write(u'Categorie: \"'+df['Categorie']+'\"\n')
     f.write(u'---')
 
     f.close()
